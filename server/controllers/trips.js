@@ -41,7 +41,7 @@ const updateTrip = async (req, res) => {
         const { title, description, img_url, num_days, start_date, end_date, total_cost } = req.body
         const results = await pool.query(`
             UPDATE trips
-            SET title = $1, description = $2, img_url = $3, num_days = $4, start_date = $5, end_date = $6, total_cost= $
+            SET title = $1, description = $2, img_url = $3, num_days = $4, start_date = $5, end_date = $6, total_cost= $7
             WHERE id = $8`,
             [title, description, img_url, num_days, start_date, end_date, total_cost, id]
         )

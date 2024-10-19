@@ -27,8 +27,11 @@ const createTripDestination = async (req, res) => {
 const getAllTrips = async (req, res) => {
     try {
         const destination_id = parseInt(req.params.destination_id);
-        const results = await pool.query(
-            'SELECT * FROM trips_destinations WHERE destination_id = $1',
+        const results = await pool.query(`
+            SELECT *
+            FROM trips
+            INNER JOIN trips_destinations ON trips_destinations.trip_id = trips.id
+            WHERE trips_destinations.destination_id = $1`,
             [destination_id]
         );
         res.status(200).json(results.rows);
@@ -37,18 +40,22 @@ const getAllTrips = async (req, res) => {
     }
 };
 
-const getAllDestinations = async (req, res) => {
+const getAllDestinations  = async (req, res) => {
     try {
-        const trip_id = parseInt(req.params.trip_id);
-        const results = await pool.query(
-            'SELECT * FROM trips_destinations WHERE trip_id = $1',
+        const trip_id = parseInt(req.params.trip_id)
+        const results = await pool.query(`
+            SELECT *
+            FROM destinations
+            INNER JOIN trips_destinations ON trips_destinations.destination_id = destinations.id
+            WHERE trips_destinations.trip_id = $1`,
             [trip_id]
         );
-        res.status(200).json(results.rows);
+        res.status(200).json(results.rows)
     } catch (error) {
-        res.status(409).json({ error: error.message });
+        res.status(409).json({ error: error.message })
     }
-};
+  }
+  
 
 export default {
     getTripsDestinations,

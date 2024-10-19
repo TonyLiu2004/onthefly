@@ -4,11 +4,12 @@ const createActivity = async (req, res) => {
     try{
         const trip_id = parseInt(req.params.trip_id)
         const {activity, num_votes} = req.body
+        const votes = num_votes === null ? num_votes : 1;
         const results = await pool.query(
             `INSERT INTO activities (trip_id, activity, num_votes)
             VALUES($1, $2, $3) 
             RETURNING *`,
-            [trip_id, activity, num_votes]
+            [trip_id, activity, votes]
         )
         res.status(201).json(results.rows[0])
     }
