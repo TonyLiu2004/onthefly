@@ -13,3 +13,8 @@
 * in client/src/pages/TipDetails.js, ActivityBtn and DestinationBtn needs a key, just set to the same id
 * added "const votes = num_votes === null ? num_votes : 1;" to createActivity in server/controllers/activities.js so they dont initialize to null
 * In the /pages/TripDetails.jsx file, fetchDestinations requires  the database to include destination name when fetching.
+* remove proxy from client/package.json
+
+
+later:
+* When deploying: server/routes/auth.js has /github/callback as successRedirect: 'http://localhost:3000/.' Need to change later to client website

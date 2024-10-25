@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './CreateTrip.css'
 
-const CreateTrip = () => {
+const CreateTrip = ({user, api_url}) => {
 
-    const [post, setPost] = useState({id: 0, title: "", description: "", img_url: "", num_days: 0, start_date: "", end_date: "", total_cost: 0.0 })
-    
+    const [post, setPost] = useState({id: 0, title: "", description: "", img_url: "", num_days: 0, start_date: "", end_date: "", total_cost: 0.0, username: user.username })
+
     const handleChange = (event) => {
         const {name, value} = event.target;
         setPost( (prev) => {
@@ -40,7 +40,7 @@ const CreateTrip = () => {
           body: JSON.stringify(post)
         }
       
-        fetch('http://localhost:3001/trips', options)
+        fetch(`${api_url}/trips`, options)
         window.location.href = '/'
     }
 
