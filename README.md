@@ -15,6 +15,8 @@
 * In the /pages/TripDetails.jsx file, fetchDestinations requires  the database to include destination name when fetching.
 * remove proxy from client/package.json
 
+* user-trip's router.get('/users/:trip_id', getUserTrips) uses trip_id but in code, it used username.
 
 later:
 * When deploying: server/routes/auth.js has /github/callback as successRedirect: 'http://localhost:3000/.' Need to change later to client website
+* When deploying: client/components/AddTripOptionCard, change the fetch to the client website

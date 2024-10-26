@@ -78,7 +78,7 @@ export const getUserTrips = async (req, res) => {
             AND ut.username = $1`,
             [username]
         )
-
+        console.log(username)
         res.status(200).json(results.rows)
     } catch (error) {
         res.status(409).json( { error: error.message } )

@@ -8,7 +8,6 @@ const ReadDestinations = (props) => {
 
 
     useEffect(() => {
-
         setDestinations(props.data);
     }, [props]);
     

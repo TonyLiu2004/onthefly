@@ -15,7 +15,6 @@ const TripDetails = ({data, api_url}) => {
     useEffect(() => {
         const result = data.filter(item => item.id === parseInt(id))[0];
         setPost({id: parseInt(result.id), title: result.title, description: result.description, img_url: result.img_url, num_days: parseInt(result.num_days), start_date: result.start_date.slice(0,10), end_date: result.end_date.slice(0,10), total_cost: result.total_cost});
-
         const fetchActivities = async () => {
             const response = await fetch(`${api_url}/activities/` + id)
             const data = await response.json()
@@ -32,6 +31,7 @@ const TripDetails = ({data, api_url}) => {
             const response = await fetch(`${api_url}/users-trips/users/${id}`)
             const travelersJson = await response.json()
             setTravelers(travelersJson)
+            console.log(travelersJson)
         }
 
         fetchTravelers();

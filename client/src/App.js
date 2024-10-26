@@ -78,7 +78,7 @@ const App = () => {
     {
       path:"/destinations",
       element: user && user.id ?
-      <ReadDestinations data={destinations} /> : <Login api_url={API_URL} />
+      <ReadDestinations data={destinations}/> : <Login api_url={API_URL} />
     },
     {
       path:"/trip/get/:id",
