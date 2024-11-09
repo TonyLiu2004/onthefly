@@ -5,10 +5,11 @@ import './index.css';
 import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+console.log("index.js loaded");
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      {console.log("QWEWQEWQEWQEQW 1")}
       <App />
     </BrowserRouter>
   </React.StrictMode>
