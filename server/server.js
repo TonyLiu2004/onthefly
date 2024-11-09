@@ -11,6 +11,7 @@ import authRoutes from './routes/auth.js'
 import userTripRoutes from './routes/user-trips.js'
 
 const app = express()
+
 app.use(session({
   secret: 'codepath',
   resave: false,
