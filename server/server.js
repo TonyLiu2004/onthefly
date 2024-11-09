@@ -20,7 +20,7 @@ app.use(session({
 
 app.use(express.json())
 app.use(cors({
-  origin: 'http://client-production-73a9.up.railway.app',
+  origin: 'https://client-production-73a9.up.railway.app/',
   methods: 'GET,POST,PUT,DELETE,PATCH',
   credentials: true
 }))
