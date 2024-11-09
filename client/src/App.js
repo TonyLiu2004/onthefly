@@ -16,7 +16,7 @@ import Avatar from './components/Avatar'
 const App = () => {
   
   const API_URL = process.env.NODE_ENV === 'production' ? 'onthefly-production-319d.up.railway.app' : '';
-  const CLIENT_URL = 'http://localhost:3000'
+  const CLIENT_URL = 'client-production-3c74.up.railway.app'
 
   const [trips, setTrips] = useState([]);
   const [destinations, setDestinations] = useState([]);
@@ -50,13 +50,14 @@ const App = () => {
     getUser()
     fetchTrips();
     fetchDestinations();
-  }, [API_URL]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const logout = async () => {
     const url = `${API_URL}/auth/logout`
     const response = await fetch(url, { credentials: 'include' })
-    //const json = await response.json()
-    await response.json()
+    const json = await response.json()
+    console.log("logout json: ",json)
     window.location.href = CLIENT_URL
   }
   // Sets up routes
