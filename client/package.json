@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "npx http-server ./dist",
-    "build": "react-scripts build",
+    "build": "echo 'Starting client build...' && react-scripts build && echo 'Build complete!'",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
