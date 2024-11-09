@@ -61,13 +61,12 @@ const App = () => {
     window.location.href = CLIENT_URL
   }
   // Sets up routes
+  console.log(user, user.id, trips, API_URL)
   let element = useRoutes([
     {
-      // path: "/",
-      // element: user && user.id ?
-      // <ReadTrips user={user} data={trips} /> : <Login api_url={API_URL} />
       path: "/",
-      element:<ReadTrips data={trips}/>
+      element: user && user.id ?
+      <ReadTrips user={user} data={trips} /> : <Login api_url={API_URL} />
     },
     {
       path:"/trip/new",
