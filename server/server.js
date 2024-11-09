@@ -20,7 +20,7 @@ app.use(session({
 
 app.use(express.json())
 app.use(cors({
-  origin: 'client-production-3c74.up.railway.app',
+  origin: 'http://client-production-73a9.up.railway.app',
   methods: 'GET,POST,PUT,DELETE,PATCH',
   credentials: true
 }))
@@ -50,5 +50,5 @@ app.use('/tripDestinations', TripDestinationRoutes)
 const PORT = process.env.PORT || 3001
 
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on onthefly-production-319d.up.railway.app:${PORT}`);
+  console.log(`🚀 Server running on http://localhost:${PORT}`);
 })
