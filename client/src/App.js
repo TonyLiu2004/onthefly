@@ -14,7 +14,7 @@ import Login from './pages/Login'
 import Avatar from './components/Avatar'
 
 const App = () => {
-  
+  console.log("in app")
   const API_URL = 'https://onthefly-production-319d.up.railway.app/';
   const CLIENT_URL = 'https://client-production-73a9.up.railway.app/'
  
