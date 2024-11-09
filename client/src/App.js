@@ -15,7 +15,7 @@ import Avatar from './components/Avatar'
 
 const App = () => {
   
-  const API_URL = process.env.NODE_ENV === 'production' ? 'https://onthefly-production-319d.up.railway.app/' : '';
+  const API_URL = 'https://onthefly-production-319d.up.railway.app/';
   const CLIENT_URL = 'https://client-production-73a9.up.railway.app/'
 
   const [trips, setTrips] = useState([]);
