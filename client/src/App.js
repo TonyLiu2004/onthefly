@@ -15,7 +15,7 @@ import Avatar from './components/Avatar'
 
 const App = () => {
   const API_URL = 'https://onthefly-production-319d.up.railway.app';
-  const CLIENT_URL = 'https://client-production-73a9.up.railway.app'
+  const CLIENT_URL = 'https://client-production-73a9.up.railway.app';
  
   const [trips, setTrips] = useState([]);
   const [destinations, setDestinations] = useState([]);
@@ -24,6 +24,7 @@ const App = () => {
   useEffect(() => {
     const fetchDestinations = async () => {
       try {
+        console.log(`${API_URL}/destinations`)
         const response = await fetch(`${API_URL}/destinations`)
         const data = await response.json()
         setDestinations(data)
