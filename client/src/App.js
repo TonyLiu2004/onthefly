@@ -24,8 +24,8 @@ const App = () => {
   useEffect(() => {
     const fetchDestinations = async () => {
       try {
-        console.log(`${API_URL}/destinations`)
         const response = await fetch(`${API_URL}/destinations`)
+        console.log(response)
         const data = await response.json()
         setDestinations(data)
       } catch (error) {
