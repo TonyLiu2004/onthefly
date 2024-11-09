@@ -20,3 +20,5 @@
 later:
 * When deploying: server/routes/auth.js has /github/callback as successRedirect: 'http://localhost:3000/.' Need to change later to client website
 * When deploying: client/components/AddTripOptionCard, change the fetch to the client website
+
+* "start": "npx http-server ./dist" IS A LIE!!!! GO TO ./build

@@ -17,13 +17,12 @@ const App = () => {
   
   const API_URL = 'https://onthefly-production-319d.up.railway.app/';
   const CLIENT_URL = 'https://client-production-73a9.up.railway.app/'
-  console.log("qweqwewqewqewqewqewqewqewqewqewqewqewqewqewqewqewqewqewq")
+
   const [trips, setTrips] = useState([]);
   const [destinations, setDestinations] = useState([]);
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    console.log("2", user, user.id, trips, API_URL)
     const fetchDestinations = async () => {
       try {
         const response = await fetch(`${API_URL}/destinations`)
@@ -48,11 +47,9 @@ const App = () => {
       const json = await response.json()
       setUser(json.user)
     }
-    console.log("3", user, user.id, trips, API_URL)
     getUser()
     fetchTrips();
     fetchDestinations();
-    console.log("4", user, user.id, trips, API_URL)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
