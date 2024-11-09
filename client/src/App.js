@@ -23,6 +23,7 @@ const App = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
+    console.log("2", user, user.id, trips, API_URL)
     const fetchDestinations = async () => {
       try {
         const response = await fetch(`${API_URL}/destinations`)
@@ -47,9 +48,11 @@ const App = () => {
       const json = await response.json()
       setUser(json.user)
     }
+    console.log("3", user, user.id, trips, API_URL)
     getUser()
     fetchTrips();
     fetchDestinations();
+    console.log("4", user, user.id, trips, API_URL)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -61,7 +64,7 @@ const App = () => {
     window.location.href = CLIENT_URL
   }
   // Sets up routes
-  console.log(user, user.id, trips, API_URL)
+
   let element = useRoutes([
     {
       path: "/",
