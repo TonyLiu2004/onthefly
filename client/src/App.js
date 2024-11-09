@@ -50,12 +50,13 @@ const App = () => {
     getUser()
     fetchTrips();
     fetchDestinations();
-  }, []);
+  }, [API_URL]);
 
   const logout = async () => {
     const url = `${API_URL}/auth/logout`
     const response = await fetch(url, { credentials: 'include' })
-    const json = await response.json()
+    //const json = await response.json()
+    await response.json()
     window.location.href = CLIENT_URL
   }
   // Sets up routes
