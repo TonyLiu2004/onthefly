@@ -63,9 +63,11 @@ const App = () => {
   // Sets up routes
   let element = useRoutes([
     {
+      // path: "/",
+      // element: user && user.id ?
+      // <ReadTrips user={user} data={trips} /> : <Login api_url={API_URL} />
       path: "/",
-      element: user && user.id ?
-      <ReadTrips user={user} data={trips} /> : <Login api_url={API_URL} />
+      element:<ReadTrips data={trips}/>
     },
     {
       path:"/trip/new",
