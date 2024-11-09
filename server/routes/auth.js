@@ -39,7 +39,8 @@ router.get(
 router.get(
     '/github/callback',
     passport.authenticate('github', {
-        successRedirect: 'http://localhost:3000/',
+        //successRedirect: 'http://localhost:3000/',
+        successRedirect: process.env.NODE_ENV === 'production' ? 'onthefly-production-319d.up.railway.app' : '',
         failureRedirect:'/destinations',
     })
 )
