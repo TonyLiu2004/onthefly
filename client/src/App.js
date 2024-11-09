@@ -16,7 +16,7 @@ import Avatar from './components/Avatar'
 const App = () => {
   
   const API_URL = process.env.NODE_ENV === 'production' ? 'onthefly-production-319d.up.railway.app' : '';
-  const CLIENT_URL = 'client-production-3c74.up.railway.app'
+  const CLIENT_URL = 'http://localhost:3000'
 
   const [trips, setTrips] = useState([]);
   const [destinations, setDestinations] = useState([]);
