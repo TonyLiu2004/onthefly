@@ -25,7 +25,6 @@ const App = () => {
     const fetchDestinations = async () => {
       try {
         const response = await fetch(`${API_URL}/destinations`)
-        console.log(response)
         const data = await response.json()
         setDestinations(data)
       } catch (error) {
@@ -46,6 +45,7 @@ const App = () => {
       const response = await fetch(`${API_URL}/auth/login/success`, { credentials: 'include' } )
       const json = await response.json()
       setUser(json.user)
+      console.log(json)
     }
     getUser()
     fetchTrips();
