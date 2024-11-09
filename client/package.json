@@ -13,8 +13,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "npx http-server ./dist",
-    "build": "echo 'Starting build...qqqqqqqqqqqqq' && react-scripts build && echo 'Build finished!qqqqqqqqqqqqqqqq'",
+    "build": "react-scripts build",
+    "start": "npx http-server ./build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
